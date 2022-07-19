@@ -58,23 +58,25 @@ export default function Application(props) {
     };
 
     setState({...state, appointments});
-    axios.put(`http://localhost:8001/api/appointments/${id}`, appointment)
+    return axios.put(`http://localhost:8001/api/appointments/${id}`, appointment)
+
   }
 
   function cancelInterview(id){
 
-    const appointment = {
-      ...state.appointments[id],
-      interview: null
-    };
+    // const appointment = {
+    //   ...state.appointments[id],
+    //   interview: null
+    // };
 
-    const appointments = {
-      ...state.appointments,
-      [id]: appointment
-    };
+    // const appointments = {
+    //   ...state.appointments,
+    //   [id]: appointment
+    // };
 
-    setState({...state, appointments});
-    axios.delete(`http://localhost:8001/api/appointments/${id}`, appointment)
+    // setState({...state, appointments});
+    return axios.delete(`http://localhost:8001/api/appointments/${id}`)
+    
   }
 
   const appointments = dailyAppointments.map((appointment) => {
