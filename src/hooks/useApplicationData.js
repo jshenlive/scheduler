@@ -3,6 +3,8 @@ import axios from "axios";
 
 export default function useApplicationData() {
 
+  axios.defaults.baseURL = 'http://localhost:8001';
+
   const [state, setState] = useState({
     day: "Monday",
     days: [], //array of objects including id, name, appt, interv, spots
@@ -14,9 +16,9 @@ export default function useApplicationData() {
 
   useEffect(() => {
     Promise.all([
-      axios.get("http://localhost:8001/api/days"),
-      axios.get("http://localhost:8001/api/appointments"),
-      axios.get("http://localhost:8001/api/interviewers")
+      axios.get("/api/days"),
+      axios.get("/api/appointments"),
+      axios.get("/api/interviewers")
     ])
       .then((all) => {
         setState(prev => ({
@@ -69,7 +71,7 @@ export default function useApplicationData() {
       [id]: appointment
     };
 
-    return (axios.put(`http://localhost:8001/api/appointments/${id}`, appointment)
+    return (axios.put(`/api/appointments/${id}`, appointment)
     ).then(() => {
       const days = updateSpots(state, appointments);
       setState({ ...state, appointments, days });
@@ -77,7 +79,7 @@ export default function useApplicationData() {
   }
 
   function cancelInterview(id) {
-    return axios.delete(`http://localhost:8001/api/appointments/${id}`)
+    return axios.delete(`/api/appointments/${id}`)
       .then(() => {
         const days = updateSpots(state, false, id)
         setState({ ...state, days });
