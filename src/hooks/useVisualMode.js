@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 
 export default function useVisualMode(initial) {
@@ -21,7 +21,7 @@ export default function useVisualMode(initial) {
     if (history.length > 1) { // history arr cannot be less then 1
       history.pop();
       setHistory([...history])
-      setMode(history[history.length-1])
+      setMode(history[history.length - 1])
     }
   }
 

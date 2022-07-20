@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import Header from "./Header";
 import Show from "./Show";
@@ -11,7 +11,7 @@ import Error from "./Error";
 import useVisualMode from "hooks/useVisualMode";
 
 import "components/Appointment/styles.scss"
-import { action } from "@storybook/addon-actions";
+// import { action } from "@storybook/addon-actions";
 
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";

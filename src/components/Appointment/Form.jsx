@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import InterviewerList from "components/InterviewerList";
 import Button from "components/Button";
-import { action } from "@storybook/addon-actions";
+// import { action } from "@storybook/addon-actions";
 
 export default function Form(props) {
   const [student, setStudent] = useState(props.student || "");
