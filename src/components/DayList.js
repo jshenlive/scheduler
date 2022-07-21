@@ -18,8 +18,6 @@ export default function DayList(props) {
     )
   })
 
-  console.log()
-
   return (
     <ul>
       {days}
