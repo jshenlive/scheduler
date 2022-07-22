@@ -1,6 +1,3 @@
-// import React, { useEffect } from "react";
-// import axios from "axios";
-
 export function getAppointmentsForDay(state, day) {
   if (state && day) {
     for (let ele of state.days) {
@@ -25,7 +22,6 @@ export function getInterview(state, interview) {
       }
     }
   }
-
   return null
 }
 

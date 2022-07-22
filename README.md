@@ -3,9 +3,9 @@ function interviews include add/delete/edit
 Uses get/put/delete with axios
 test with jest/cypress
 
-!["screenshot on home page (logged in with links added)"](https://github.com/jshenlive/tinyapp/blob/master/docs/main.png)
-!["screenshot on edit page"](https://github.com/jshenlive/tinyapp/blob/master/docs/edit.png)
-!["screenshot on registration page"](https://github.com/jshenlive/tinyapp/blob/master/docs/register.png)
+!["screenshot on home page"](https://github.com/jshenlive/scheduler/blob/master/docs/mainpage.png)
+!["screenshot after added interview"](https://github.com/jshenlive/scheduler/blob/master/docs/add-appointment.png)
+!["screenshot on form input"](https://github.com/jshenlive/scheduler/blob/master/docs/form.png)
 
 
 ## Setup

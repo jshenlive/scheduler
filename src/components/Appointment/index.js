@@ -25,12 +25,12 @@ const ERROR_DELETE = "ERROR_DELETE"
 
 export default function Appointment(props) {
 
-  // console.log("Apppointment props", props);
-
+  //mode use for displaying different forms of appotintment
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
 
+  //save function, calls bookInterview
   function save(name, interviewer) {
     const interview = {
       student: name,
@@ -43,10 +43,12 @@ export default function Appointment(props) {
       .catch(e => transition(ERROR_SAVE, true))
   }
 
+  //cancel function
   function cancel() {
     transition(CONFIRM);
   }
 
+  //delete function calls cancelInterview()
   function confirmDelete() {
     transition(DELETING, true);
     props.cancelInterview(props.id)
@@ -56,12 +58,13 @@ export default function Appointment(props) {
       })
   }
 
+  //edit
   function edit() {
     transition(EDIT);
   }
 
   return (
-    <article className="appointment"  data-testid="appointment">
+    <article className="appointment" data-testid="appointment">
       <Header time={props.time} />
       {/* {props.interview ? <Show student={props.interview.student} interviewer={props.interview.interviewer} /> : <Empty />} */}
 

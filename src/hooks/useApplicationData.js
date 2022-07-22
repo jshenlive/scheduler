@@ -3,6 +3,7 @@ import axios from "axios";
 
 export default function useApplicationData() {
 
+  //baseURL for requests
   axios.defaults.baseURL = 'http://localhost:8001';
 
   const [state, setState] = useState({
@@ -14,6 +15,7 @@ export default function useApplicationData() {
 
   const setDay = day => setState({ ...state, day });
 
+  //make requests for each data
   useEffect(() => {
     Promise.all([
       axios.get("/api/days"),
@@ -27,7 +29,6 @@ export default function useApplicationData() {
           appointments: all[1].data,
           interviewers: all[2].data
         }));
-        // setInterviewer((prev)=>({...prev, all[2].data}));
       });
 
   }, [])
